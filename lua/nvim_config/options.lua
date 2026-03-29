@@ -5,6 +5,7 @@ vim.opt.expandtab = true
 
 vim.wo.number = true
 vim.wo.relativenumber = false
+vim.o.winborder = 'rounded'
 
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
