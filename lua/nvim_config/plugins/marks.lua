@@ -1,4 +1,1 @@
-return {
-  "chentoast/marks.nvim",
-  opts = {},
-}
+vim.pack.add({ { src = "https://github.com/chentoast/marks.nvim" } })

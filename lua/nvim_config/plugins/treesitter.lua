@@ -1,9 +1,6 @@
-return {
-    "nvim-treesitter/nvim-treesitter",
-    config = function()
-        require("nvim-treesitter.configs").setup({
-            auto_install = true,
-            ensure_installed = { "python", "c", "lua", "vim", "vimdoc", "query" }
-        })
-    end,
-}
+vim.pack.add({{src = "https://github.com/nvim-treesitter/nvim-treesitter"}})
+
+require("nvim-treesitter.config").setup({
+    ensure_installed = { "cpp", "python", "rust" },
+    highlight = {enable = true}
+})
