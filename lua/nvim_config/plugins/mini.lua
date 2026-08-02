@@ -5,7 +5,6 @@ require("mini.notify").setup()
 require("mini.comment").setup()
 require("mini.cursorword").setup()
 require("mini.statusline").setup()
-require("mini.diff").setup({ view = { style = "sign" } })
 
 
 -- mini files

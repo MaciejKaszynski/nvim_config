@@ -1,4 +1,6 @@
-vim.lsp.enable({ "clangd", "luals", "pyright", "rust-analyzer" })
+vim.pack.add({{src = "https://github.com/neovim/nvim-lspconfig"}})
+
+vim.lsp.enable({ "clangd", "luals", "pyright", "rust-analyzer", "starpls" })
 vim.keymap.set("n", "<leader>pf", vim.lsp.buf.format, { silent = true, desc = "Run formatter" })
 
 vim.o.winborder = "rounded"
