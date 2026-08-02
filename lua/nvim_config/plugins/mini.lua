@@ -6,8 +6,6 @@ require("mini.comment").setup()
 require("mini.cursorword").setup()
 require("mini.statusline").setup()
 
-
--- mini files
 local mini_files = require("mini.files")
 mini_files.setup({
     options = {
@@ -15,4 +13,7 @@ mini_files.setup({
     },
 })
 
-vim.keymap.set("n", "<leader>fe", mini_files.open)
+vim.keymap.set("n", "<leader>fe", function()
+    mini_files.open(vim.api.nvim_buf_get_name(0), false)
+    mini_files.reveal_cwd()
+end, { desc = "Open mini.files rooted at cwd, revealing current file" })
