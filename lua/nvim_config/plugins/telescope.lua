@@ -1,24 +1,32 @@
-vim.pack.add({ { src = "https://github.com/nvim-tree/nvim-web-devicons" },
+vim.pack.add({
+    { src = "https://github.com/nvim-tree/nvim-web-devicons" },
     { src = "https://github.com/nvim-lua/plenary.nvim" },
     { src = "https://github.com/nvim-telescope/telescope.nvim" },
     { src = "https://github.com/nvim-telescope/telescope-ui-select.nvim" } })
 
+
 require("telescope").setup({
-  extensions = {
-    ["ui-select"] = {
-      require("telescope.themes").get_dropdown({}),
-    },
-  },
+extensions = {
+    ["ui-select"] = require("telescope.themes").get_dropdown(),
+},
 })
 require("telescope").load_extension("ui-select")
 
 local builtin = require("telescope.builtin")
 local opts = { silent = true }
 
+
+-- lsp
+vim.keymap.set("n", "grr", builtin.lsp_references, { desc = "References" })
+vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "Definition" })
+vim.keymap.set("n", "gri", builtin.lsp_implementations, { desc = "Implementations" })
+
+-- files
 vim.keymap.set("n", "<leader>ff", builtin.find_files, opts)
 vim.keymap.set("n", "<leader>fg", builtin.git_files, opts)
 vim.keymap.set("n", "<leader>fs", builtin.live_grep, opts)
 
+-- others
 vim.keymap.set("n", "<leader>lh", builtin.help_tags, opts)
 vim.keymap.set("n", "<leader>lm", builtin.marks, opts)
 vim.keymap.set("n", "<leader>lb", builtin.buffers, opts)

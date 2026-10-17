@@ -1,5 +1,6 @@
 require("nvim_config.plugins.bazel-target-picker")
 require("nvim_config.plugins.coverage")
+require("nvim_config.plugins.blink-cmp")
 require("nvim_config.plugins.follow-md-links")
 require("nvim_config.plugins.gitsigns")
 require("nvim_config.plugins.luasnip")
